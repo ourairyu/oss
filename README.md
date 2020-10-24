@@ -1,1 +1,1 @@
-# Homepage of Ourai's open-source software
+# Homepage of open-source software

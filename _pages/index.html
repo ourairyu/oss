@@ -1,0 +1,8 @@
+---
+permalink: index.html
+---
+
+{% for prj in site.data.projects %}
+  <h2><a href="https://github.com/ourai/{{ prj.id }}" target="_blank" rel="external nofollow">{{ prj.title }}</a></h2>
+  {% if prj.description %}<p>{{ prj.description }}</p>{% endif %}
+{% endfor %}

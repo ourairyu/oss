@@ -2,7 +2,7 @@
 
 root = true
 
-[*.{html,yml,md,js,es6,coffee,css,scss,vue}]
+[*.{html,yml,md,json,ejs,js,es6,coffee,css,scss,vue}]
 charset = utf-8
 indent_style = space
 indent_size = 2
