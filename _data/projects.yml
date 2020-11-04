@@ -5,6 +5,7 @@
 - id: buds
   title: Buds
   description: 遵循 SUIT CSS 命名规范（BEM 的变体）的 CSS 框架。
+  homepage: https://oss.ourai.ws/buds/
 - id: trick
   title: Trick
   description: 包含且扩展 Compass 的 Sass mixin 库。
