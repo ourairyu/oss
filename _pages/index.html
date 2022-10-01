@@ -22,40 +22,46 @@ permalink: index.html
     </figure>
   </header>
   <div class="Homepage-body container">
-    <section class="ProjectCategory">
-      <header class="ProjectCategory-header">
-        <h2 class="ProjectCategory-heading">反混沌战线联盟</h2>
-      </header>
-      {% assign prj_counter = 0 %}
-      {% for prj in site.data.projects %}
-        {% assign prj_counter = prj_counter | plus: 1 %}
-        {% if prj_counter == 1 %}
-          <div class="row">
-        {% endif %}
-        <div class="ProjectItem col-xs-12 col-sm-4">
-          <h3 class="ProjectItem-heading">{{ prj.title }}</h3>
-          {% if prj.description %}<p class="ProjectItem-description">{{ prj.description }}</p>{% endif %}
-          <div class="ProjectItem-links">
-            <i class="fa fa-link"></i><ul>
-              <li><a href="https://github.com/ourai/{{ prj.id }}" target="_blank" rel="external nofollow">GitHub</a></li>
-              {% if prj.homepage %}<li><a href="{{ prj.homepage }}" target="_blank" rel="external nofollow">项目主页</a></li>{% endif %}
-            </ul>
+    {% for matrix in site.data.projects %}
+      <section class="ProjectCategory">
+        <header class="ProjectCategory-header">
+          <h2 class="ProjectCategory-heading">{{ matrix[1].title }}</h2>
+        </header>
+        {% assign projects = matrix[1].items %}
+        {% if projects and projects.size > 0 %}
+        {% assign prj_counter = 0 %}
+        {% for prj in projects %}
+          {% assign prj_counter = prj_counter | plus: 1 %}
+          {% if prj_counter == 1 %}
+            <div class="row">
+          {% endif %}
+          <div class="ProjectItem col-xs-12 col-sm-4">
+            {% if prj.repo %}
+              {% assign repo_url = prj.repo %}
+            {% else %}
+              {% assign repo_url = prj.id | prepend: 'https://github.com/ourai/' %}
+            {% endif %}
+            <h3 class="ProjectItem-heading"><a href="{{ prj.homepage | default: repo_url }}" target="_blank" rel="external nofollow">{{ prj.title }}</a></h3>
+            {% if prj.description %}<p class="ProjectItem-description">{{ prj.description }}</p>{% endif %}
+            <div class="ProjectItem-links">
+              <i class="fa fa-link"></i><ul>
+                <li><a href="{{ repo_url }}" target="_blank" rel="external nofollow">代码仓库</a></li>
+                {% if prj.homepage %}<li><a href="{{ prj.homepage }}" target="_blank" rel="external nofollow">项目主页</a></li>{% endif %}
+              </ul>
+            </div>
           </div>
-        </div>
-        {% if prj_counter == 3 or prj_counter == site.data.projects.size %}
-          </div>
+          {% if prj_counter == 3 or prj_counter == projects.size %}
+            </div>
+          {% endif %}
+          {% if prj_counter == 3 %}
+            {% assign prj_counter = 0 %}
+          {% endif %}
+        {% endfor %}
+        {% else %}
+          <p>暂无</p>
         {% endif %}
-        {% if prj_counter == 3 %}
-          {% assign prj_counter = 0 %}
-        {% endif %}
-      {% endfor %}
-    </section>
-    <section class="ProjectCategory">
-      <header class="ProjectCategory-header">
-        <h2 class="ProjectCategory-heading">互联网自由宣言</h2>
-      </header>
-      <p>暂无</p>
-    </section>
+      </section>
+    {% endfor %}
   </div>
 </main>
 {% include footer.html %}

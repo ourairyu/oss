@@ -1,21 +1,40 @@
-- id: handie
-  title: Handie
-  description: 针对不同平台、技术栈提供尽可能一致的开发体验的前端开发框架。
-  homepage: https://oss.ourai.ws/handie/
-- id: buds
-  title: Buds
-  description: 遵循 SUIT CSS 命名规范（BEM 的变体）的 CSS 框架。
-  homepage: https://oss.ourai.ws/buds/
-- id: petals
-  title: Petals
-  description: 为基于组件的前端开发而生，提供一些半成品原子 UI 组件。
-  homepage: https://oss.ourai.ws/petals/
-- id: trick
-  title: Trick
-  description: 包含且扩展 Compass 的 Sass mixin 库。
-- id: H5Fx
-  title: H5Fx
-  description: 基于 HTML5 Forms 所定义的属性对表单字段进行合法性校验。
-- id: rocketz
-  title: RocketZ
-  description: 用于将本地文件分发到多个 OSS 的命令行工具。
+anti-chaos:
+  title: 反混沌战线联盟
+  items:
+    - id: handie
+      title: Handie
+      description: 针对 JS-based 技术栈提供尽可能一致体验的渐进式配置驱动企业级中后台前端应用开发框架。
+      repo: https://github.com/handiejs
+      homepage: https://handiejs.github.io/
+    # - id: buds
+    #   title: Buds
+    #   description: 遵循 SUIT CSS 命名规范（BEM 的变体）的 CSS 框架。
+    #   homepage: https://oss.ourai.ws/buds/
+    - id: petals
+      title: Petals
+      description: 跨 JS-based 技术栈控件（UI 组件）体系，为基于组件的前端开发而生，提供一些半成品原子控件。
+      repo: https://github.com/petals-ui
+      homepage: https://petals.fxxk.design/
+    - id: toolbox
+      title: Toolbox
+      description: 用于日常开发的工具包。
+      repo: https://github.com/anti-chaos/toolbox
+      homepage: https://ntks.ourai.ws/projects/toolbox/
+    # - id: trick
+    #   title: Trick
+    #   description: 包含且扩展 Compass 的 Sass mixin 库。
+    # - id: H5Fx
+    #   title: H5Fx
+    #   description: 基于 HTML5 Forms 所定义的属性对表单字段进行合法性校验。
+    # - id: rocketz
+    #   title: RocketZ
+    #   description: 用于将本地文件分发到多个 OSS 的命令行工具。
+
+individual-centered:
+  title: 互联网自由宣言
+  items:
+    - id: knosys
+      title: KnoSys
+      description: 开放的个人知识库。
+      homepage: https://oss.ourai.ws/knosys/
+
